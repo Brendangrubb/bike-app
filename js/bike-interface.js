@@ -10,6 +10,7 @@ $(function() {
   //   BikeObject.getBikefromSerial(serial);
   // });
   $("#search-brand").click(function() {
+    $("#results").empty();
     var brand = $("#brand").val().toString();
     $("#serial").val("");
     BikeObject.getBikefromBrand(brand);
