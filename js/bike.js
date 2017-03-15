@@ -15,7 +15,6 @@ Bike.prototype.getBikefromBrand = function(brand) {
           "<td>" + response.bikes[i].title + "</td>" +
           "<td>" + response.bikes[i].serial + "</td>" +
           "<td>" + response.bikes[i].id + "</td>" +
-          "<td>" + response.bikes[i].model + "</td>" +
           "<td>" + response.bikes[i].year + "</td>" +
           "<td><img src='" + response.bikes[i].thumb + "' alt='A stolen " + response.bikes[i].manufacturer_name + "'</td>" +
         "</tr>");
