@@ -6,7 +6,7 @@ $(function() {
   $("#search-brand").click(function() {
     $("#results").empty();
     var brand = $("#brand").val().toString();
-    $("#serial").val("");
+    $("#brand").val("");
     BikeObject.getBikefromBrand(brand);
   });
 });

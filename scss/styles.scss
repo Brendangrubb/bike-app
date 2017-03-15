@@ -3,6 +3,11 @@ body {
 }
 
 img {
+  &:hover {
+    height: 300px;
+    transition: 0.5s;
+  }
+  transition: 0.5s;
   border-radius: 5px;
   border: 1px solid black;
   height: 100px;
@@ -13,7 +18,7 @@ img {
 }
 
 h3 {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .center {
@@ -24,4 +29,8 @@ h3 {
 
 table {
   margin-left: 25%;
+}
+
+#results-table {
+  display: none;
 }
