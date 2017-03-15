@@ -9,16 +9,16 @@ function Bike() {}
 
 Bike.prototype.getBikefromBrand = function(brand) {
   $.get("https://bikeindex.org:443/api/v3/search?page=1&per_page=25&manufacturer=" + brand + "&location=Portland%2C%20OR&distance=100&stolenness=proximity").then(function(response) {
-    $(".result-header").text("List of stolen " + brand + " bikes:");
     for (var i = 0; i < response.bikes.length; i++) {
-      $("#results").append("<li>" + response.bikes[i].id + "</li>" +
-      "<ul>" +
-        "<li>" + "<img src='" + response.bikes[i].thumb + "' alt= 'stolen " + response.bikes[i].title + "'>" + "</li>" +
-        "<li>" + response.bikes[i].title + "</li>" +
-        "<li>" + response.bikes[i].serial + "</li>" +
-        "<li>" + response.bikes[i].frame_model + "</li>" +
-        "<li>" + response.bikes[i].year + "</li>" +
-      "</ul>");
+      $("#results").append("<tr>" +
+          "<td>" + response.bikes[i].manufacturer_name + "</td>" +
+          "<td>" + response.bikes[i].title + "</td>" +
+          "<td>" + response.bikes[i].serial + "</td>" +
+          "<td>" + response.bikes[i].id + "</td>" +
+          "<td>" + response.bikes[i].model + "</td>" +
+          "<td>" + response.bikes[i].year + "</td>" +
+          "<td><img src='" + response.bikes[i].thumb + "' alt='A stolen " + response.bikes[i].manufacturer_name + "'</td>" +
+        "</tr>");
     }
   });
 };

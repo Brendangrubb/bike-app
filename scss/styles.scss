@@ -1,0 +1,25 @@
+body {
+  font-family: 'Oswald', sans-serif;
+}
+
+img {
+  border-radius: 5px;
+  border: 1px solid black;
+  height: 100px;
+}
+
+.list {
+  line-height: 1.7em;
+}
+
+/*
+
+"<ul>" +
+  "<li>" + "<img src='" + response.bikes[i].thumb + "' alt= 'stolen " + response.bikes[i].title + "'>" + "</li><br>" +
+  "<li>" + response.bikes[i].title + "</li>" +
+  "<li>" + response.bikes[i].serial + "</li>" +
+  "<li>" + response.bikes[i].frame_model + "</li>" +
+  "<li>" + response.bikes[i].year + "</li><br>" +
+"</ul>");
+
+*/
