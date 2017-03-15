@@ -1,5 +1,5 @@
 body {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Abel', sans-serif;
 }
 
 img {
@@ -14,7 +14,16 @@ img {
 }
 
 .jumbotron {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  margin-top: 0;
+  padding-left: 50px;
+  height: 400px;
+  background-image: url("../../img/bikes_home.jpg");
+  background-size: cover;
+  color: white;
+  font-size: 7em;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: black;
 }
 
 h3 {

@@ -6,38 +6,22 @@
     <script src="bower_components/moment/min/moment.min.js"></script>
     <script type="text/javascript" src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
     <title>Portland Stolen Bike Lookup</title>
   </head>
   <body>
+    <h1 class="jumbotron">Portland Stolen Bike Locator</h1>
     <div class="container">
-      <h1 class="jumbotron">Portland Stolen Bike Locator</h1>
       <h3>This is a registry of stolen bikes in Portland. You can search for a list of stolen bikes in the past month. Search by ID, color, brand, and more.</h3>
       <div class="row">
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="serial">Serial Number:</label>
-            <input type="text" name="serial" class="form-control" id="serial" placeholder="serial">
-            <div class="center">
-              <button type="button" class="btn" id="search-serial">Search</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="color">Color:</label>
-            <input type="text" name="id" class="form-control" id="color" placeholder="color">
-            <div class="center">
-              <button type="button" class="btn" id="search-color">Search</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
+        <div class="col-md-12">
           <div class="form-group">
             <label for="brand">Brand:</label>
-            <input type="text" name="brand" class="form-control" id="brand" placeholder="brand">
+            <input type="text" name="brand" class="form-control" id="brand" placeholder="brand"><br>
+            <label for="city">City:</label>
+            <input type="text" name="city" class="form-control" id="city" placeholder="city"><Br>
+            <label for="date-stolen">Date Stolen:</label>
+            <input type="date" name="date-stolen" class="form-control" id="date-stolen">
             <div class="center">
               <button type="button" class="btn" id="search-brand">Search</button>
             </div>
@@ -58,7 +42,6 @@
                 <th>Image</th>
               </tr>
             </thead>
-
             <tbody id="results">
             </tbody>
           </table>
