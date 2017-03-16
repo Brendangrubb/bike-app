@@ -43,3 +43,9 @@ table {
 #results-table {
   display: none;
 }
+
+@media screen and (max-width: 1000px) {
+  #date-stolen-1 {
+    margin-bottom: 10px;
+  }
+}
