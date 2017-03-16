@@ -7,11 +7,11 @@ $(function() {
     $("#results").empty();
     var brand = $("#brand").val().toString();
     var city = $("#city").val().toString();
-    var date_stolen = $("#date-stolen").val();
-    console.log(date_stolen);
-    var date_stolen_unix = (new Date(date_stolen).getTime() / 1000).toFixed(0);
-    console.log(date_stolen_unix);
-    BikeObject.getBikes(brand, city, date_stolen_unix);
+    var user_date_1 = $("#date-stolen-1").val();
+    var user_date_2 = $("#date-stolen-2").val();
+    var user_date_unix_1 = (new Date(user_date_1).getTime() / 1000).toFixed(0);
+    var user_date_unix_2 = (new Date(user_date_2).getTime() / 1000).toFixed(0);
+    BikeObject.getBikes(brand, city, user_date_unix_1, user_date_unix_2);
   });
 });
 

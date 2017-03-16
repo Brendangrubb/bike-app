@@ -10,9 +10,9 @@
     <title>Portland Stolen Bike Lookup</title>
   </head>
   <body>
-    <h1 class="jumbotron">Portland Stolen Bike Locator</h1>
+    <h1 class="jumbotron">Stolen Bike Locator</h1>
     <div class="container">
-      <h3>This is a registry of stolen bikes in Portland. You can search for a list of stolen bikes in the past month. Search by ID, color, brand, and more.</h3>
+      <h3>This is a registry of stolen bikes worldwide. You can search by brand, city and date range.</h3>
       <div class="row">
         <div class="col-md-12">
           <div class="form-group">
@@ -20,15 +20,21 @@
             <input type="text" name="brand" class="form-control" id="brand" placeholder="brand"><br>
             <label for="city">City:</label>
             <input type="text" name="city" class="form-control" id="city" placeholder="city"><Br>
-            <label for="date-stolen">Date Stolen:</label>
-            <input type="date" name="date-stolen" class="form-control" id="date-stolen">
+            <label for="date-stolen-1">Dates between which bike was stolen:</label>
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="date" name="date-stolen-1" class="form-control" id="date-stolen-1">
+                </div>
+                <div class="col-md-6">
+                  <input type="date" name="date-stolen-2" class="form-control" id="date-stolen-2">
+                </div>
+              </div>
             <div class="center">
               <button type="button" class="btn" id="search-brand">Search</button>
             </div>
           </div>
         </div>
       </div>
-
       <div class="row" id="results-table">
         <div class="col-md-8">
           <table class="table table-striped">
@@ -37,8 +43,9 @@
                 <th>Brand</th>
                 <th>Title</th>
                 <th>Serial</th>
-                <th>ID</th>
                 <th>Year</th>
+                <th>Stolen From</th>
+                <th>Date Stolen</th>
                 <th>Image</th>
               </tr>
             </thead>
