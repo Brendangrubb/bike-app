@@ -12,12 +12,6 @@ $(function() {
     var user_date_unix_1 = (new Date(user_date_1).getTime() / 1000).toFixed(0);
     var user_date_unix_2 = (new Date(user_date_2).getTime() / 1000).toFixed(0);
 
-    var displayLatLong = function(city, getLatLong) {
-      console.log(getLatLong);
-    };
-
-    BikeObject.getLatLong(city, displayLatLong);
-
     BikeObject.getBikes(brand, city, user_date_unix_1, user_date_unix_2);
   });
 });
