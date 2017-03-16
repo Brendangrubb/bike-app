@@ -7,7 +7,7 @@ function displayBikes(city, bikeData, user_date_unix_1, user_date_unix_2) {
     var location = bikeData.bikes[i].stolen_location.split(",");
     var location_join = location.join(", ");
 
-    $("#results-table").show();
+    $(".results-table").show();
 
     if (bikeData.bikes[i].thumb === null) {
       img_result = "No image available";
@@ -15,6 +15,7 @@ function displayBikes(city, bikeData, user_date_unix_1, user_date_unix_2) {
       img_result = "<img src='" + bikeData.bikes[i].thumb + "' alt='A stolen " + bikeData.bikes[i].title + "'>";
     }
 
+    console.log((user_date_unix_1 <= bikeData.bikes[i].date_stolen) && (user_date_unix_2 >= bikeData.bikes[i].date_stolen));
     if ((user_date_unix_1 <= bikeData.bikes[i].date_stolen) && (user_date_unix_2 >= bikeData.bikes[i].date_stolen)) {
       $("#results").append(
         "<tr>" +
@@ -33,6 +34,7 @@ function displayBikes(city, bikeData, user_date_unix_1, user_date_unix_2) {
 
 $(function() {
   var BikeObject = new Bike();
+  var page = 1;
 
   $("#search-brand").click(function() {
     $("#results").empty();
@@ -44,6 +46,18 @@ $(function() {
     var user_date_unix_1 = (new Date(user_date_1).getTime() / 1000).toFixed(0);
     var user_date_unix_2 = (new Date(user_date_2).getTime() / 1000).toFixed(0);
 
-    BikeObject.getBikes(brand, city, user_date_unix_1, user_date_unix_2, displayBikes);
+    BikeObject.getBikes(brand, city, user_date_unix_1, user_date_unix_2, displayBikes, page);
   });
+
+  $("#next").click(function() {
+    var brand = $("#brand").val().toString();
+    var city = $("#city").val().toString();
+    var user_date_1 = $("#date-stolen-1").val();
+    var user_date_2 = $("#date-stolen-2").val();
+    var user_date_unix_1 = (new Date(user_date_1).getTime() / 1000).toFixed(0);
+    var user_date_unix_2 = (new Date(user_date_2).getTime() / 1000).toFixed(0);
+
+    page += 1;
+    BikeObject.getBikes(brand, city, user_date_unix_1, user_date_unix_2, displayBikes, page);
+  })
 });
